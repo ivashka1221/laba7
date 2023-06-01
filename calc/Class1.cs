@@ -20,7 +20,7 @@ namespace simple_calc
 
                 Console.WriteLine("Введите первое число:");
                 a = Convert.ToDouble(Console.ReadLine());
-
+          
                 Console.WriteLine("Введите оператор:");
                 oper = Convert.ToChar(Console.ReadLine());
 
@@ -47,12 +47,20 @@ namespace simple_calc
 
                 else if (oper == '/')
                 {
-                    total = a / b;
-                    Console.WriteLine("Деление " + a + " на " + b + " равно " + total + ".");
+                    if (b != 0)
+                    {
+                        total = a / b;
+                        Console.WriteLine("Деление " + a + " на " + b + " равно " + total + ".");
+                    }
+                    else
+                    {
+
+                        Console.WriteLine("Ошибка - Деление на ноль "); 
+                    }
                 }
                 else
                 {
-                    Console.WriteLine("Неизвестный оператор.");
+                    Console.WriteLine("Ошибка - Неизвестный оператор."); 
                 }
                 Console.WriteLine("Вы хотите продолжить работу с калькулятором? (д/н)");
                 again = Convert.ToChar(Console.ReadLine());
